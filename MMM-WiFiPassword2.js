@@ -1,5 +1,6 @@
-Module.register("MMM-WiFiPassword", {  
+Module.register("MMM-WiFiPassword2", {  
   defaults: {
+	  header: "Local WiFi Details",
 	  qrSize: 125,
 	  colorDark: "#fff",
 	  colorLight: "#000",
@@ -50,7 +51,7 @@ Module.register("MMM-WiFiPassword", {
 	  }
 	  
 	  var header = document.createElement('header');
-	  header.innerHTML = "Local WiFi Details";
+	  header.innerHTML = this.config.header;
 	  div.appendChild(header);
 	  
 	  var qrDiv = document.createElement("div");
@@ -72,28 +73,28 @@ Module.register("MMM-WiFiPassword", {
 	  if (this.config.showNetwork) {
 		var networkNameDiv = document.createElement("p");
 		networkNameDiv.className = "text network";
-		networkNameDiv.innerHTML = "<b>Network:</b> " + this.config.network;
+		networkNameDiv.innerHTML = "Network: " + this.config.network;
 		textDiv.appendChild(networkNameDiv);
 	  }
 	  
 	  if (this.config.showPassword) {
 		var networkPassDiv = document.createElement("p");
 	  	networkPassDiv.className = "text password";
-	  	networkPassDiv.innerHTML = "<b>Password:</b> " + this.config.password;
+	  	networkPassDiv.innerHTML = "Password: " + this.config.password;
 	  	textDiv.appendChild(networkPassDiv);
 	  }
 	 
 	  if (this.config.showAuthType) {
 		var networkTypeDiv = document.createElement("p");
 	  	networkTypeDiv.className = "text network-type";
-	  	networkTypeDiv.innerHTML = "<b>Authentication Type:</b> " + this.config.authType.toUpperCase();
+	  	networkTypeDiv.innerHTML = "Protocol: " + this.config.authType.toUpperCase();
 	  	textDiv.appendChild(networkTypeDiv);
 	  }
 	  
 	  if (this.config.debug) {
 		var debugDiv = document.createElement("p");
 		debugDiv.className = "text debug";
-		debugDiv.innerHTML = "<b>QR String:</b> " + this.qrText;
+		debugDiv.innerHTML = "QR String: " + this.qrText;
 		textDiv.appendChild(debugDiv);
 	  }
 	  	  
@@ -103,7 +104,7 @@ Module.register("MMM-WiFiPassword", {
   getScripts: function() {
 	  return [
 		'qrcode.min.js', // library that creates qrcode. Thanks to https://github.com/davidshimjs/qrcodejs
-		'MMM-WiFiPassword.css',
+		'MMM-WiFiPassword2.css',
 	  ];
   },
   
