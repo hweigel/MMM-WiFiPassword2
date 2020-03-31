@@ -1,4 +1,4 @@
-# MMM-WiFiPassword
+# MMM-WiFiPassword 
 Magic Mirror Module that displays your WiFi Network, Password, and QRCode so people who visit your house/business can connect easier. 
 
 Note that if you have special characters in your password, the QR code will not work.  This is because I haven't done the work required to escape the special characters properly. 
